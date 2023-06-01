@@ -1,11 +1,27 @@
 
 public class Cat extends  Animal implements Land{
 
-    public  void greet(){
+    private int numberOfLegs;
 
+    Cat(boolean mammals, boolean carnivorous, int mood) {
+        super(mammals, carnivorous, mood);
     }
 
-    public void makeSound() {
+    @Override
+    public int getNumberOfLegs() {
+        return this.numberOfLegs;
+    }
 
+    public  void sayHellow(int mood){
+        if(mood == this.MOOD_HAPPY){
+            System.out.println("Cat purring.");
+        }
+        if(mood == this.MOOD_SCARE){
+            System.out.println("Cat hissing.");
+        }
+    }
+
+    public  void sayHellow(){
+        System.out.println("Cat making a meow~ sound.");
     }
 }
